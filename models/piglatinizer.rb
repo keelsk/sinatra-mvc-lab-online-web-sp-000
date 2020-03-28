@@ -33,6 +33,5 @@ class PigLatinizer < Sinatra::Base
     end
     array_piglat.join(',')
   end
-  
-  def 
+
 end

@@ -26,7 +26,7 @@ class PigLatinizer
     array_piglat = []
     array_text = text.split(" ")
     array_text.each do |word|
-      if (word[0].match?(/[aeiou]/))
+      if (word[0].match?(/[aeiou][AEIOU]/))
         binding.pry
         
         

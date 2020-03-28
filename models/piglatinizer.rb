@@ -8,12 +8,12 @@ class PigLatinizer < Sinatra::Base
   def starts_with_consonant
     ending = text.slice!(0)
     
-    if !(text[0].include?(/[aeiou]/)) 
-      elsif 
-      end
+    while !(text[0].include?(/[aeiou]/)) do 
+      ending = ending + text.slice!(0)
     end
-    part << new_text
-    part.join(',')
+    
+    new_text = text + ending + "ay"
+    new_text
   end
   
   def starts_with_vowel

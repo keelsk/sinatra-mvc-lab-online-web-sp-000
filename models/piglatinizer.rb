@@ -32,7 +32,7 @@ class PigLatinizer
         array_piglat << self.starts_with_consonant(word)
       end
     end
-    array_piglat.join()
+    array_piglat.join(" ")
   end
 
 end

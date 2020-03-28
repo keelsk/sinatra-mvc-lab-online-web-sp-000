@@ -1,5 +1,6 @@
 require_relative 'config/environment'
 require_relative 'models/piglatinizer.rb'
+require 'pry'
 
 class App < Sinatra::Base
   get '/' do
@@ -8,6 +9,7 @@ class App < Sinatra::Base
   
   post '/' do 
     text = PigLatinizer.new(params[:text])
+    binding.pry
     @results = text.change_text
     erb :results
   end

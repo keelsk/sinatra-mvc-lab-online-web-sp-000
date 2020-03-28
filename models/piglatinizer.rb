@@ -5,8 +5,9 @@ class PigLatinizer < Sinatra::Base
     @text = text
   end
   
-  def change_word
-    part = []
+  def starts_with_consonant
+    ending = text.slice!(0)
+    
     if text.find {|letter| letter.include?(/[aeiou]/)}
       if !(letter.include?(/[aeiou]/))
         part << letter
@@ -16,6 +17,9 @@ class PigLatinizer < Sinatra::Base
     end
     part << new_text
     part.join(',')
+  end
+  
+  def starts_with_vowel
   end
   
   def change_text

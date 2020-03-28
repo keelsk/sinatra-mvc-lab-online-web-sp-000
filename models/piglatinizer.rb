@@ -13,10 +13,17 @@ class PigLatinizer < Sinatra::Base
         new_text = text.shift()
       end
     end
-    new_text
+    part << new_text
+    part.join(',')
   end
   
   def change_text
+    array_piglat = []
     array_text = text.split(" ")
+    array_text.each do |word|
+      array_piglat << word.change_word
+    end
   end
+  
+  def 
 end

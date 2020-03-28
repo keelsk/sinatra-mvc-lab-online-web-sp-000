@@ -27,9 +27,6 @@ class PigLatinizer
     array_text = text.split(" ")
     array_text.each do |word|
       if (word[0].match?(/[aeiouAEIOU]/))
-        binding.pry
-        
-        
         array_piglat << self.starts_with_vowel(word)
       else 
         array_piglat << self.starts_with_consonant(word)

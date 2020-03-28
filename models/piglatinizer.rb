@@ -1,3 +1,4 @@
+require 'pry'
 class PigLatinizer
   attr_accessor :text
   
@@ -5,27 +6,30 @@ class PigLatinizer
     @text = text
   end
   
-  def starts_with_consonant(text)
-    ending = text.slice!(0)
+  def starts_with_consonant(word)
+    ending = word.slice!(0)
     
-    while !(text[0].include?(/[aeiou]/)) do 
-      ending = ending + text.slice!(0)
+    while !(word[0].include?(/[aeiou]/)) do 
+      ending = ending + word.slice!(0)
     end
     
-    new_text = text + ending + "ay"
+    new_text = word + ending + "ay"
     new_text
   end
   
-  def starts_with_vowel(text)
-    new_text = text + "way"
+  def starts_with_vowel(word)
+    new_text = word + "way"
     new_text
   end
   
   def change_text
     array_piglat = []
-    array_text = @text.split(" ")
+    array_text = text.split(" ")
     array_text.each do |word|
       if (word[0].include?(/[aeiou]/))
+        binding.pry
+        
+        
         array_piglat << self.starts_with_vowel(word)
       else 
         array_piglat << self.starts_with_consonant(word)

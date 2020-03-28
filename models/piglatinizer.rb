@@ -21,7 +21,7 @@ class PigLatinizer
     new_text
   end
   
-  def piglatinize
+  def piglatinize(text)
     array_piglat = []
     array_text = text.split(" ")
     array_text.each do |word|

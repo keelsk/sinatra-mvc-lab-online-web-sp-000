@@ -7,7 +7,7 @@ class PigLatinizer < Sinatra::Base
   
   def change_word
     part = []
-    text.each do |letter|
+    text.find {|letter| letter.include?
       if !(letter.include?(/[aeiou]/))
         part << letter
         new_text = text.shift()

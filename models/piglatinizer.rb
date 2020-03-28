@@ -11,6 +11,7 @@ class PigLatinizer < Sinatra::Base
       if !(letter.include?(/[aeiou]/))
         part << letter
         new_text = text.shift()
+      elsif 
       end
     end
     part << new_text

@@ -8,10 +8,7 @@ class PigLatinizer < Sinatra::Base
   def starts_with_consonant
     ending = text.slice!(0)
     
-    if text.find {|letter| letter.include?(/[aeiou]/)}
-      if !(letter.include?(/[aeiou]/))
-        part << letter
-        new_text = text.shift()
+    if !(text[0].include?(/[aeiou]/)) 
       elsif 
       end
     end

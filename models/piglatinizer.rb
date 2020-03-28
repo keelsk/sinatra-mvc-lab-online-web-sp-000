@@ -2,7 +2,7 @@ require 'pry'
 class PigLatinizer
   
   def initialize
-    @text = text
+
   end
   
   def starts_with_consonant(word)
